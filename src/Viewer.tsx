@@ -12,7 +12,9 @@ export default class Viewer extends React.Component<ViewerProps, any> {
     super();
 
     this.container = null;
-    this.defaultContainer = document.createElement('div');
+    if( typeof window !== 'undefined') {
+      this.defaultContainer = document.createElement('div');
+    }
     this.component = null;
   }
 
